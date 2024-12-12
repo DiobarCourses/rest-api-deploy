@@ -1,17 +1,17 @@
 ### Recuperar todas las peliculas
-GET http://localhost:3000/movies HTTP/1.0
+GET http://localhost:3001/movies HTTP/1.0
 
 ### Recuperar una pelicula por ID
-GET http://localhost:3000/movies/1 HTTP/1.0
+GET http://localhost:3001/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3 HTTP/1.0
 
 ### Recuperar todas las peliculas por un genero
 // los generos pueden ser recursos
-# GET http://localhost:3000/movies/genre/terror
+# GET http://localhost:3001/movies/genre/terror
 // con query params, en vez de un recurso se ve como un filtro
-GET http://localhost:3000/movies?genre=Crime
+GET http://localhost:3001/movies?genre=Crime
 
 ### Crear una pelicula
-POST http://localhost:3000/movies HTTP/1.0
+POST http://localhost:3001/movies HTTP/1.0
 Content-Type: application/json
 
 {
@@ -27,10 +27,13 @@ Content-Type: application/json
 
 ### actualizar una pelicula
 // la id no la modifica porque no esta en el esquema de movies
-PATCH  http://localhost:3000/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3 HTTP/1.0
+PATCH  http://localhost:3001/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3 HTTP/1.0
 Content-Type: application/json
 
 {
   "id": 12345,
   "year": 2000
 }
+
+### DELETE MOVIE
+DELETE  http://localhost:3001/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3 HTTP/1.0
